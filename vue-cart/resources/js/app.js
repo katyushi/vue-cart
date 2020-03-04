@@ -1,7 +1,17 @@
-/**
- * First, we will load all of this project's Javascript utilities and other
- * dependencies. Then, we will be ready to develop a robust and powerful
- * application frontend using useful Laravel and JavaScript libraries.
- */
+import './bootstrap';
+import Vue from 'vue';
+import Tailwindcss from 'tailwindcss';
 
-require('./bootstrap');
+import Routes from '@/js/routes.js';
+
+import App from '@/js/views/App';
+
+Vue.use(Tailwindcss);
+
+const App = new Vue({
+    el: '#app',
+    router: Routes,
+    render: h => h(app),
+});
+
+export default app;
