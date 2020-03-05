@@ -38339,7 +38339,7 @@ var render = function() {
                     attrs: {
                       type: "text",
                       placeholder:
-                        "https://stayhipp.com/wp-content/uploads/2020/01/helo-fish-.jpg"
+                        "https://images-na.ssl-images-amazon.com/images/I/31z1vD53V2L._AC_.jpg"
                     },
                     domProps: { value: _vm.post.picture },
                     on: {
@@ -38374,7 +38374,8 @@ var render = function() {
                     expression: "post.description"
                   }
                 ],
-                staticClass: "form-control",
+                staticClass:
+                  " no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none",
                 attrs: { rows: "5" },
                 domProps: { value: _vm.post.description },
                 on: {

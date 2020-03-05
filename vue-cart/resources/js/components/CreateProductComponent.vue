@@ -25,7 +25,7 @@
 			    <div class="flex -mr-px">
 				    <span class="flex items-center leading-normal bg-grey-lighter rounded rounded-r-none border border-r-0 border-grey-light px-3 whitespace-no-wrap text-grey-dark text-sm">Url</span>
 			    </div>
-			    <input type="text"  v-model="post.picture" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative focus:border-blue focus:shadow" placeholder="https://stayhipp.com/wp-content/uploads/2020/01/helo-fish-.jpg">
+			    <input type="text"  v-model="post.picture" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative focus:border-blue focus:shadow" placeholder="https://images-na.ssl-images-amazon.com/images/I/31z1vD53V2L._AC_.jpg">
 		        </div>
             </div>
           </div>
@@ -35,7 +35,7 @@
           <div class="col-md-6">
             <div class="form-group">
               <label>Product description:</label><br />
-              <textarea class="form-control" v-model="post.description" rows="5"></textarea>
+              <textarea v-model="post.description" class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" rows="5"></textarea>
             </div>
           </div>
         </div>
