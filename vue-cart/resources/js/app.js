@@ -1,17 +1,18 @@
-import './bootstrap';
-import Vue from 'vue';
-import Tailwindcss from 'tailwindcss';
+require("./bootstrap");
 
-import Routes from '@/js/routes.js';
+window.Vue = require("vue");
 
-import App from '@/js/views/App';
+import VueRouter from "vue-router";
+Vue.use(VueRouter);
 
-Vue.use(Tailwindcss);
+import VueAxios from "vue-axios";
+import axios from "axios";
+Vue.use(VueAxios, axios);
 
-const App = new Vue({
-    el: '#app',
-    router: Routes,
-    render: h => h(app),
-});
+Vue.component(
+    "example-component",
+    require("./components/ExampleComponent.vue")
+);
 
-export default app;
+const router = new VueRouter({ mode: "history" });
+const app = new Vue(Vue.util.extend({ router })).$mount("#app");

@@ -11,4 +11,5 @@
 |
 */
 
-Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
+Route::view('/', 'welcome');
+Route::view('/post', 'post');
