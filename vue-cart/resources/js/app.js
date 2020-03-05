@@ -7,12 +7,43 @@ Vue.use(VueRouter);
 
 import VueAxios from "vue-axios";
 import axios from "axios";
+
+import App from "./App.vue";
 Vue.use(VueAxios, axios);
 
-Vue.component(
-    "example-component",
-    require("./components/ExampleComponent.vue")
-);
+import ProductComponent from "./components/ProductComponent.vue";
+import CreateProductComponent from "./components/CreateProductComponent.vue";
+import IndexComponent from "./components/IndexComponent.vue";
+import CartComponent from "./components/CartComponent.vue";
+//import EditComponent from "./components/EditComponent.vue";
 
-const router = new VueRouter({ mode: "history" });
-const app = new Vue(Vue.util.extend({ router })).$mount("#app");
+const routes = [
+    {
+        name: "home",
+        path: "/",
+        component: IndexComponent
+    },
+    {
+        name: "create",
+        path: "/create",
+        component: CreateProductComponent
+    },
+    {
+        name: "products",
+        path: "/products",
+        component: ProductComponent
+    },
+    /*{
+        name: "edit",
+        path: "/edit/:id",
+        component: EditComponent
+    },*/
+    {
+        name: "cart",
+        path: "/cart",
+        component: CartComponent
+    }
+];
+
+const router = new VueRouter({ mode: "history", routes: routes });
+const app = new Vue(Vue.util.extend({ router }, App)).$mount("#app");
