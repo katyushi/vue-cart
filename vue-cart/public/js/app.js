@@ -1929,6 +1929,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -1983,9 +1988,77 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log("Component mounted.");
+  data: function data() {
+    return {
+      post: {}
+    };
+  },
+  methods: {
+    addPost: function addPost() {
+      console.log(this.post);
+    }
   }
 });
 
@@ -2000,11 +2073,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2032,16 +2100,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -6598,7 +6656,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".fade-enter-active,\r\n.fade-leave-active {\n  transition: opacity 0.5s;\n}\n.fade-enter,\r\n.fade-leave-active {\n  opacity: 0;\n}\r\n", ""]);
+exports.push([module.i, ".fade-enter-active,\n.fade-leave-active {\n  transition: opacity 0.5s;\n}\n.fade-enter,\n.fade-leave-active {\n  opacity: 0;\n}\n", ""]);
 
 // exports
 
@@ -38083,13 +38141,54 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c(
-      "div",
-      [_c("transition", { attrs: { name: "fade" } }, [_c("router-view")], 1)],
-      1
-    )
-  ])
+  return _c(
+    "div",
+    { staticClass: "container" },
+    [
+      _c("nav", { staticClass: "bg-white px-8 pt-2 shadow-md" }, [
+        _c(
+          "div",
+          { staticClass: "-mb-px flex justify-center" },
+          [
+            _c(
+              "router-link",
+              {
+                staticClass:
+                  "no-underline text-teal-dark border-b-2 border-teal-dark uppercase tracking-wide font-bold text-xs py-3 mr-8",
+                attrs: { to: "/" }
+              },
+              [_vm._v("Home")]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass:
+                  "no-underline text-grey-dark border-b-2 border-transparent uppercase tracking-wide font-bold text-xs py-3 mr-8",
+                attrs: { to: "/create" }
+              },
+              [_vm._v("Add Products")]
+            ),
+            _vm._v(" "),
+            _c(
+              "router-link",
+              {
+                staticClass:
+                  "no-underline text-grey-dark border-b-2 border-transparent uppercase tracking-wide font-bold text-xs py-3 mr-8",
+                attrs: { to: "/products" }
+              },
+              [_vm._v("Products")]
+            )
+          ],
+          1
+        )
+      ]),
+      _c("br"),
+      _vm._v(" "),
+      _c("transition", { attrs: { name: "fade" } }, [_c("router-view")], 1)
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -38152,21 +38251,284 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _c("h1", [_vm._v("Create A Product")]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.addPost($event)
+          }
+        }
+      },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Product Title:")]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex flex-wrap items-stretch w-full mb-4 relative"
+                },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.post.title,
+                        expression: "post.title"
+                      }
+                    ],
+                    staticClass:
+                      "flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative focus:border-blue focus:shadow",
+                    attrs: { type: "text", placeholder: "plumbus" },
+                    domProps: { value: _vm.post.title },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.post, "title", $event.target.value)
+                      }
+                    }
+                  })
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Product Picture Url:")]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex flex-wrap items-stretch w-full mb-4 relative"
+                },
+                [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.post.picture,
+                        expression: "post.picture"
+                      }
+                    ],
+                    staticClass:
+                      "flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative focus:border-blue focus:shadow",
+                    attrs: {
+                      type: "text",
+                      placeholder:
+                        "https://stayhipp.com/wp-content/uploads/2020/01/helo-fish-.jpg"
+                    },
+                    domProps: { value: _vm.post.picture },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.post, "picture", $event.target.value)
+                      }
+                    }
+                  })
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Product description:")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.post.description,
+                    expression: "post.description"
+                  }
+                ],
+                staticClass: "form-control",
+                attrs: { rows: "5" },
+                domProps: { value: _vm.post.description },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.post, "description", $event.target.value)
+                  }
+                }
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Product Price:")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex flex-row" }, [
+                _c(
+                  "span",
+                  {
+                    staticClass:
+                      "flex items-center bg-grey-lighter rounded rounded-r-none px-3 font-bold text-grey-darker"
+                  },
+                  [_vm._v("R$")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.post.price,
+                      expression: "post.price"
+                    }
+                  ],
+                  staticClass:
+                    "bg-grey-lighter text-grey-darker py-2 font-normal rounded text-grey-darkest border border-grey-lighter rounded-l-none font-bold",
+                  attrs: { type: "number", name: "price" },
+                  domProps: { value: _vm.post.price },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.post, "price", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Product Amount in Stock:")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex flex-row" }, [
+                _c(
+                  "span",
+                  {
+                    staticClass:
+                      "flex items-center bg-grey-lighter rounded rounded-r-none px-3 font-bold text-grey-darker"
+                  },
+                  [_vm._v("Qtd")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.post.qtd,
+                      expression: "post.qtd"
+                    }
+                  ],
+                  staticClass:
+                    "bg-grey-lighter text-grey-darker py-2 font-normal rounded text-grey-darkest border border-grey-lighter rounded-l-none font-bold",
+                  attrs: { type: "number", name: "price" },
+                  domProps: { value: _vm.post.qtd },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.post, "qtd", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _vm._m(2)
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card card-default" }, [
-          _c("div", { staticClass: "card-header" }, [_vm._v("Add-Product")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [_vm._v("I'm add product.")])
-        ])
-      ])
+    return _c("div", { staticClass: "flex -mr-px" }, [
+      _c(
+        "span",
+        {
+          staticClass:
+            "flex items-center leading-normal bg-grey-lighter rounded rounded-r-none border border-r-0 border-grey-light px-3 whitespace-no-wrap text-grey-dark text-sm"
+        },
+        [_vm._v("Name")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex -mr-px" }, [
+      _c(
+        "span",
+        {
+          staticClass:
+            "flex items-center leading-normal bg-grey-lighter rounded rounded-r-none border border-r-0 border-grey-light px-3 whitespace-no-wrap text-grey-dark text-sm"
+        },
+        [_vm._v("Url")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded"
+        },
+        [_vm._v("Create")]
+      )
     ])
   }
 ]
@@ -38198,27 +38560,21 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "bg-white px-8 pt-2 shadow-md" }, [
-      _c("div", { staticClass: "-mb-px flex justify-center" }, [
-        _c(
-          "a",
-          {
-            staticClass:
-              "no-underline text-teal-dark border-b-2 border-teal-dark uppercase tracking-wide font-bold text-xs py-3 mr-8",
-            attrs: { href: "/" }
-          },
-          [_vm._v("Home")]
-        ),
+    return _c("div", [
+      _c("div", [
+        _c("img", {
+          staticStyle: { "margin-left": "auto", "margin-right": "auto" },
+          attrs: {
+            src: "https://media.giphy.com/media/O6IMv2PdoG2ru/giphy.gif",
+            alt: "helo"
+          }
+        }),
         _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass:
-              "no-underline text-grey-dark border-b-2 border-transparent uppercase tracking-wide font-bold text-xs py-3 mr-8",
-            attrs: { href: "/products" }
-          },
-          [_vm._v("Products")]
-        )
+        _c("br"),
+        _vm._v(" "),
+        _c("h1", { staticStyle: { "text-align": "center" } }, [
+          _vm._v("Go Buy Something")
+        ])
       ])
     ])
   }
@@ -38244,38 +38600,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div")
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "bg-white px-8 pt-2 shadow-md" }, [
-      _c("div", { staticClass: "-mb-px flex justify-center" }, [
-        _c(
-          "a",
-          {
-            staticClass:
-              "no-underline text-teal-dark border-b-2 border-teal-dark uppercase tracking-wide font-bold text-xs py-3 mr-8",
-            attrs: { href: "/" }
-          },
-          [_vm._v("Home")]
-        ),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            staticClass:
-              "no-underline text-grey-dark border-b-2 border-transparent uppercase tracking-wide font-bold text-xs py-3 mr-8",
-            attrs: { href: "/products" }
-          },
-          [_vm._v("Products")]
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -53862,8 +54189,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\hugol\onedrive\documents\dev\vue-cart\vue-cart\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\hugol\onedrive\documents\dev\vue-cart\vue-cart\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\BUBB\Documents\dev\vue-cart\vue-cart\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\BUBB\Documents\dev\vue-cart\vue-cart\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
