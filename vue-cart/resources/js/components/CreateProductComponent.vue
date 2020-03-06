@@ -80,6 +80,10 @@ export default {
   },
   methods: {
     addPost() {
+      let uri = 'https://lit-sierra-71792.herokuapp.com/api/products/create';
+      this.axios.post(uri, this.post).then((response) => {
+        this.$router.push({name: 'products'});
+      });
       console.log(this.post);
     }
   }

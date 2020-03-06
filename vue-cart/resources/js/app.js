@@ -15,7 +15,7 @@ import ProductComponent from "./components/ProductComponent.vue";
 import CreateProductComponent from "./components/CreateProductComponent.vue";
 import IndexComponent from "./components/IndexComponent.vue";
 import CartComponent from "./components/CartComponent.vue";
-//import EditComponent from "./components/EditComponent.vue";
+import EditComponent from "./components/EditComponent.vue";
 
 const routes = [
     {
@@ -33,11 +33,11 @@ const routes = [
         path: "/products",
         component: ProductComponent
     },
-    /*{
+    {
         name: "edit",
         path: "/edit/:id",
         component: EditComponent
-    },*/
+    },
     {
         name: "cart",
         path: "/cart",
