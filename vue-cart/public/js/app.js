@@ -2086,9 +2086,99 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log("Component mounted.");
+  data: function data() {
+    return {
+      post: {}
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    var uri = "https://lit-sierra-71792.herokuapp.com/api/products/edit/".concat(this.$route.params.id);
+    this.axios.get(uri).then(function (response) {
+      _this.post = response.data;
+    });
+  },
+  methods: {
+    updatePost: function updatePost() {
+      var _this2 = this;
+
+      var uri = "https://lit-sierra-71792.herokuapp.com/api/products/update/".concat(this.$route.params.id);
+      this.axios.post(uri, this.post).then(function (response) {
+        _this2.$router.push({
+          name: 'products'
+        });
+      });
+    }
   }
 });
 
@@ -2165,6 +2255,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2174,7 +2265,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    var uri = 'http://vuelaravelcrud.test/api/posts';
+    var uri = 'https://lit-sierra-71792.herokuapp.com/api/products';
     this.axios.get(uri).then(function (response) {
       _this.posts = response.data.data;
     });
@@ -38624,9 +38715,288 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", [
+    _c("h1", [_vm._v("Edit Product")]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c(
+      "form",
+      {
+        on: {
+          submit: function($event) {
+            $event.preventDefault()
+            return _vm.updatePost($event)
+          }
+        }
+      },
+      [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Product Title:")]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex flex-wrap items-stretch w-full mb-4 relative"
+                },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.post.title,
+                        expression: "post.title"
+                      }
+                    ],
+                    staticClass:
+                      "flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative focus:border-blue focus:shadow",
+                    attrs: { type: "text", placeholder: "plumbus" },
+                    domProps: { value: _vm.post.title },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.post, "title", $event.target.value)
+                      }
+                    }
+                  })
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Product Picture Url:")]),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "flex flex-wrap items-stretch w-full mb-4 relative"
+                },
+                [
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.post.picture,
+                        expression: "post.picture"
+                      }
+                    ],
+                    staticClass:
+                      "flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative focus:border-blue focus:shadow",
+                    attrs: {
+                      type: "text",
+                      placeholder:
+                        "https://images-na.ssl-images-amazon.com/images/I/31z1vD53V2L._AC_.jpg"
+                    },
+                    domProps: { value: _vm.post.picture },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.post, "picture", $event.target.value)
+                      }
+                    }
+                  })
+                ]
+              )
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Product description:")]),
+              _c("br"),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.post.description,
+                    expression: "post.description"
+                  }
+                ],
+                staticClass:
+                  " no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none",
+                attrs: { rows: "5" },
+                domProps: { value: _vm.post.description },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.$set(_vm.post, "description", $event.target.value)
+                  }
+                }
+              })
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Product Price:")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex flex-row" }, [
+                _c(
+                  "span",
+                  {
+                    staticClass:
+                      "flex items-center bg-grey-lighter rounded rounded-r-none px-3 font-bold text-grey-darker"
+                  },
+                  [_vm._v("R$")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.post.price,
+                      expression: "post.price"
+                    }
+                  ],
+                  staticClass:
+                    "bg-grey-lighter text-grey-darker py-2 font-normal rounded text-grey-darkest border border-grey-lighter rounded-l-none font-bold",
+                  attrs: { type: "number", name: "price" },
+                  domProps: { value: _vm.post.price },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.post, "price", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-md-6" }, [
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Product Amount in Stock:")]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex flex-row" }, [
+                _c(
+                  "span",
+                  {
+                    staticClass:
+                      "flex items-center bg-grey-lighter rounded rounded-r-none px-3 font-bold text-grey-darker"
+                  },
+                  [_vm._v("Qtd")]
+                ),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.post.qtd,
+                      expression: "post.qtd"
+                    }
+                  ],
+                  staticClass:
+                    "bg-grey-lighter text-grey-darker py-2 font-normal rounded text-grey-darkest border border-grey-lighter rounded-l-none font-bold",
+                  attrs: { type: "number", name: "price" },
+                  domProps: { value: _vm.post.qtd },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.$set(_vm.post, "qtd", $event.target.value)
+                    }
+                  }
+                })
+              ])
+            ])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("br"),
+        _vm._v(" "),
+        _vm._m(2)
+      ]
+    )
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex -mr-px" }, [
+      _c(
+        "span",
+        {
+          staticClass:
+            "flex items-center leading-normal bg-grey-lighter rounded rounded-r-none border border-r-0 border-grey-light px-3 whitespace-no-wrap text-grey-dark text-sm"
+        },
+        [_vm._v("Name")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "flex -mr-px" }, [
+      _c(
+        "span",
+        {
+          staticClass:
+            "flex items-center leading-normal bg-grey-lighter rounded rounded-r-none border border-r-0 border-grey-light px-3 whitespace-no-wrap text-grey-dark text-sm"
+        },
+        [_vm._v("Url")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c(
+        "button",
+        {
+          staticClass:
+            "bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded"
+        },
+        [_vm._v("Update")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -38698,6 +39068,8 @@ var render = function() {
   return _c("div", [
     _c("h1", [_vm._v("Products")]),
     _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-10" }),
       _vm._v(" "),
@@ -38724,7 +39096,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "tbody",
-        _vm._l(_vm.posts, function(post) {
+        _vm._l(_vm.products, function(post) {
           return _c("tr", { key: post.id }, [
             _c("td", [_vm._v(_vm._s(post.id))]),
             _vm._v(" "),

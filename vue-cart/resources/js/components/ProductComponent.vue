@@ -1,6 +1,7 @@
 <template>
   <div>
       <h1>Products</h1>
+      <br/>
         <div class="row">
           <div class="col-md-10"></div>
           <div class="col-md-2">
@@ -18,7 +19,7 @@
             </tr>
             </thead>
             <tbody>
-                <tr v-for="post in posts" :key="post.id">
+                <tr v-for="post in products" :key="post.id">
                     <td>{{ post.id }}</td>
                     <td>{{ post.title }}</td>
                     <td>{{ post.picture }}</td>
@@ -41,7 +42,7 @@
         }
       },
       created() {
-      let uri = 'http://vuelaravelcrud.test/api/posts';
+      let uri = 'https://lit-sierra-71792.herokuapp.com/api/products';
       this.axios.get(uri).then(response => {
         this.posts = response.data.data;
       });
