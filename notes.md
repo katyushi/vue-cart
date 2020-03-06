@@ -16,4 +16,8 @@
 
 [https://tailwindcomponents.com/component/input-price](price-input)
 
+[https://github.com/FriendsOfPHP/PHP-CS-Fixer](PHP-CS-Fixer)
+
+[https://marketplace.visualstudio.com/items?itemName=fterrag.vscode-php-cs-fixer](vscode-php-cs-fixer)
+
 []()
