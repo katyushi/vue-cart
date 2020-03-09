@@ -12,5 +12,5 @@
 */
 
 Route::get('/{any}', function () {
-  return view('post');
+    return view('post');
 })->where('any', '.*');

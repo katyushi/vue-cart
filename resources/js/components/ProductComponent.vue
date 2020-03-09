@@ -24,18 +24,18 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="post in products" :key="post.id">
-          <td>{{ post.id }}</td>
-          <td>{{ post.title }}</td>
-          <td>{{ post.picture }}</td>
-          <td>{{ post.description }}</td>
-          <td>{{ post.price }}</td>
-          <td>{{ post.qtd }}</td>
+        <tr v-for="product in products" :key="product.id">
+          <td>{{ product.id }}</td>
+          <td>{{ product.title }}</td>
+          <td>{{ product.picture }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price }}</td>
+          <td>{{ product.qtd }}</td>
           <td>
-            <router-link :to="{name: 'edit', params: { id: post.id }}" class="btn btn-primary">Edit</router-link>
+            <router-link :to="{name: 'edit', params: { id: product.id }}" class="btn btn-primary">Edit</router-link>
           </td>
           <td>
-            <button class="btn btn-danger" @click.prevent="deletePost(post.id)">Delete</button>
+            <button class="btn btn-danger" @click.prevent="deletePost(product.id)">Delete</button>
           </td>
         </tr>
       </tbody>
@@ -47,7 +47,7 @@
 export default {
   data() {
     return {
-      posts: []
+      products: []
     };
   },
   created() {
@@ -55,14 +55,14 @@ export default {
   },
   methods: {
     getPosts() {
-      var uri = "/api/posts";
+      var uri = "/api/products";
       console.log(uri);
       this.axios.get(uri).then(response => {
-        this.posts = response.data.data;
+        this.products = response.data.data;
       });
     },
     deletePost(id) {
-      let uri = `/api/post/delete/${id}`;
+      let uri = `/api/products/delete/${id}`;
       this.axios.delete(uri).then(response => {});
       this.getPosts();
     }

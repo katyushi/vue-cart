@@ -15,7 +15,7 @@
               </div>
               <input
                 type="text"
-                v-model="post.title"
+                v-model="product.title"
                 class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative focus:border-blue focus:shadow"
                 placeholder="plumbus"
               />
@@ -36,7 +36,7 @@
               </div>
               <input
                 type="text"
-                v-model="post.picture"
+                v-model="product.picture"
                 class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative focus:border-blue focus:shadow"
                 placeholder="https://images-na.ssl-images-amazon.com/images/I/31z1vD53V2L._AC_.jpg"
               />
@@ -51,7 +51,7 @@
             <label>Product description:</label>
             <br />
             <textarea
-              v-model="post.description"
+              v-model="product.description"
               class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
               rows="5"
             ></textarea>
@@ -69,7 +69,7 @@
               >R$</span>
               <input
                 type="number"
-                v-model="post.price"
+                v-model="product.price"
                 name="price"
                 class="bg-grey-lighter text-grey-darker py-2 font-normal rounded text-grey-darkest border border-grey-lighter rounded-l-none font-bold"
               />
@@ -88,7 +88,7 @@
               >Qtd</span>
               <input
                 type="number"
-                v-model="post.qtd"
+                v-model="product.qtd"
                 name="price"
                 class="bg-grey-lighter text-grey-darker py-2 font-normal rounded text-grey-darkest border border-grey-lighter rounded-l-none font-bold"
               />
@@ -110,19 +110,19 @@
 export default {
   data() {
     return {
-      post: {}
+      product: {}
     };
   },
   created() {
     let uri = `/api/products/edit/${this.$route.params.id}`;
     this.axios.get(uri).then(response => {
-      this.post = response.data;
+      this.product = response.data;
     });
   },
   methods: {
     updatePost() {
       let uri = `/api/products/update/${this.$route.params.id}`;
-      this.axios.post(uri, this.post).then(response => {
+      this.axios.post(uri, this.product).then(response => {
         this.$router.push({ name: "products" });
       });
     }

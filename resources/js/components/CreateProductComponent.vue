@@ -8,7 +8,7 @@
           <div class="form-group">
             <label>Product Title:</label>
             <br />
-            <input type="text" class="form-control" v-model="post.title" placeholder="plumbus" />
+            <input type="text" class="form-control" v-model="product.title" placeholder="plumbus" />
           </div>
         </div>
       </div>
@@ -21,7 +21,7 @@
             <input
               type="text"
               class="form-control"
-              v-model="post.picture"
+              v-model="product.picture"
               placeholder="https://images-na.ssl-images-amazon.com/images/I/31z1vD53V2L._AC_.jpg"
             />
           </div>
@@ -33,7 +33,7 @@
           <div class="form-group">
             <label>Product description:</label>
             <br />
-            <textarea class="form-control" v-model="post.description" rows="5"></textarea>
+            <textarea class="form-control" v-model="product.description" rows="5" placeholder="maybe i am description maybe not"></textarea>
           </div>
         </div>
       </div>
@@ -44,7 +44,7 @@
             <label>Product Price:</label>
             <br />
             <label>R$</label>
-            <input type="text" class="form-control" v-model="post.price" />
+            <input type="text" class="form-control" v-model="product.price" placeholder="9.99" />
           </div>
         </div>
       </div>
@@ -54,7 +54,7 @@
           <div class="form-group">
             <label>Product Amount in Stock:</label>
             <br />
-            <input type="text" class="form-control" v-model="post.qtd" />
+            <input type="text" class="form-control" v-model="product.qtd" placeholder="2"/>
           </div>
         </div>
       </div>
@@ -70,16 +70,16 @@
 export default {
   data() {
     return {
-      post: {}
+      product: {}
     };
   },
   methods: {
     addPost() {
-      let uri = "/api/products/create";
-      this.axios.post(uri, this.post).then(response => {
-        this.$router.push({ name: "products" });
+      let uri = "api/products/create";
+      this.axios.post(uri, this.product).then(response => {
+        this.$router.push({ name: "product" });
       });
-      console.log(this.post);
+      console.log(this.product);
     }
   }
 };

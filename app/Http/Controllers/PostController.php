@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Resources\PostCollection;
-use App\Post;
+use App\Product;
 
 class PostController extends Controller
 {
     public function store(Request $request)
     {
-        $post = new Post([
+        $product = new Product([
         'title' => $request->get('title'),
         'picture' => $request->get('picture'),
         'description' => $request->get('description'),
@@ -18,35 +18,35 @@ class PostController extends Controller
         'qtd' => $request->get('qtd')
         ]);
 
-        $post->save();
+        $product->save();
 
         return response()->json('success');
     }
     public function index()
     {
-        return new PostCollection(Post::all());
+        return new PostCollection(Product::all());
     }
 
     public function edit($id)
     {
-        $post = Post::find($id);
-        return response()->json($post);
+        $product = Product::find($id);
+        return response()->json($product);
     }
 
     public function update($id, Request $request)
     {
-        $post = Post::find($id);
+        $product = Product::find($id);
 
-        $post->update($request->all());
+        $product->update($request->all());
 
         return response()->json('successfully updated');
     }
 
     public function delete($id)
     {
-        $post = Post::find($id);
+        $product = Product::find($id);
 
-        $post->delete();
+        $product->delete();
 
         return response()->json('successfully deleted');
     }
