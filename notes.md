@@ -2,7 +2,7 @@
 
 # notes
 
-- database name: cart_vue
+-   database name: cart_vue
 
 -
 
@@ -27,5 +27,7 @@
 [https://marketplace.visualstudio.com/items?itemName=fterrag.vscode-php-cs-fixer](vscode-php-cs-fixer)
 
 [https://devcenter.heroku.com/articles/getting-started-with-php#deploy-the-app](heroku-deploy)
+
+[https://www.youtube.com/watch?v=639Pe0PpVLQ](heroku-deploy-laravel)
 
 []()
