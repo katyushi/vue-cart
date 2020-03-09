@@ -1,7 +1,10 @@
 <!-- @format -->
+
 # notes
+
 - database name: cart_vue
-- 
+
+-
 
 # useful links
 

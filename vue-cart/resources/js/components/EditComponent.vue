@@ -1,5 +1,5 @@
 <template>
-<div>
+  <div>
     <h1>Edit Product</h1>
     <br />
     <form @submit.prevent="updatePost">
@@ -8,90 +8,124 @@
           <div class="form-group">
             <label>Product Title:</label>
             <div class="flex flex-wrap items-stretch w-full mb-4 relative">
-			    <div class="flex -mr-px">
-				    <span class="flex items-center leading-normal bg-grey-lighter rounded rounded-r-none border border-r-0 border-grey-light px-3 whitespace-no-wrap text-grey-dark text-sm">Name</span>
-			    </div>
-			    <input type="text"  v-model="post.title" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative focus:border-blue focus:shadow" placeholder="plumbus">
-		        </div>
-          </div>
-        </div>
-        </div>
-        <br />
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label>Product Picture Url:</label>
-		        <div class="flex flex-wrap items-stretch w-full mb-4 relative">
-			    <div class="flex -mr-px">
-				    <span class="flex items-center leading-normal bg-grey-lighter rounded rounded-r-none border border-r-0 border-grey-light px-3 whitespace-no-wrap text-grey-dark text-sm">Url</span>
-			    </div>
-			    <input type="text"  v-model="post.picture" class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative focus:border-blue focus:shadow" placeholder="https://images-na.ssl-images-amazon.com/images/I/31z1vD53V2L._AC_.jpg">
-		        </div>
+              <div class="flex -mr-px">
+                <span
+                  class="flex items-center leading-normal bg-grey-lighter rounded rounded-r-none border border-r-0 border-grey-light px-3 whitespace-no-wrap text-grey-dark text-sm"
+                >Name</span>
+              </div>
+              <input
+                type="text"
+                v-model="post.title"
+                class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative focus:border-blue focus:shadow"
+                placeholder="plumbus"
+              />
             </div>
           </div>
         </div>
-        <br />
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label>Product description:</label><br />
-              <textarea v-model="post.description" class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none" rows="5"></textarea>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Product Picture Url:</label>
+            <div class="flex flex-wrap items-stretch w-full mb-4 relative">
+              <div class="flex -mr-px">
+                <span
+                  class="flex items-center leading-normal bg-grey-lighter rounded rounded-r-none border border-r-0 border-grey-light px-3 whitespace-no-wrap text-grey-dark text-sm"
+                >Url</span>
+              </div>
+              <input
+                type="text"
+                v-model="post.picture"
+                class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative focus:border-blue focus:shadow"
+                placeholder="https://images-na.ssl-images-amazon.com/images/I/31z1vD53V2L._AC_.jpg"
+              />
             </div>
           </div>
         </div>
-        <br />
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label>Product Price:</label>
-                <div class="flex flex-row">
-                    <span class="flex items-center bg-grey-lighter rounded rounded-r-none px-3 font-bold text-grey-darker">R$</span>
-                    <input type="number" v-model="post.price" name="price" class="bg-grey-lighter text-grey-darker py-2 font-normal rounded text-grey-darkest border border-grey-lighter rounded-l-none font-bold">
-                </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Product description:</label>
+            <br />
+            <textarea
+              v-model="post.description"
+              class="no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
+              rows="5"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Product Price:</label>
+            <div class="flex flex-row">
+              <span
+                class="flex items-center bg-grey-lighter rounded rounded-r-none px-3 font-bold text-grey-darker"
+              >R$</span>
+              <input
+                type="number"
+                v-model="post.price"
+                name="price"
+                class="bg-grey-lighter text-grey-darker py-2 font-normal rounded text-grey-darkest border border-grey-lighter rounded-l-none font-bold"
+              />
             </div>
           </div>
         </div>
-        <br />
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <label>Product Amount in Stock:</label>
-              <div class="flex flex-row">
-                    <span class="flex items-center bg-grey-lighter rounded rounded-r-none px-3 font-bold text-grey-darker">Qtd</span>
-                    <input type="number" v-model="post.qtd" name="price" class="bg-grey-lighter text-grey-darker py-2 font-normal rounded text-grey-darkest border border-grey-lighter rounded-l-none font-bold">
-                </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Product Amount in Stock:</label>
+            <div class="flex flex-row">
+              <span
+                class="flex items-center bg-grey-lighter rounded rounded-r-none px-3 font-bold text-grey-darker"
+              >Qtd</span>
+              <input
+                type="number"
+                v-model="post.qtd"
+                name="price"
+                class="bg-grey-lighter text-grey-darker py-2 font-normal rounded text-grey-darkest border border-grey-lighter rounded-l-none font-bold"
+              />
             </div>
           </div>
         </div>
-        <br />
-        <div class="form-group">
-          <button class="bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded">Update</button>
-        </div>
+      </div>
+      <br />
+      <div class="form-group">
+        <button
+          class="bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded"
+        >Update</button>
+      </div>
     </form>
   </div>
 </template>
 
 <script>
-    export default {
-
-      data() {
-        return {
-          post: {}
-        }
-      },
-      created() {
-        let uri = `https://lit-sierra-71792.herokuapp.com/api/products/edit/${this.$route.params.id}`;
-        this.axios.get(uri).then((response) => {
-            this.post = response.data;
-        });
-      },
-      methods: {
-        updatePost() {
-          let uri = `https://lit-sierra-71792.herokuapp.com/api/products/update/${this.$route.params.id}`;
-          this.axios.post(uri, this.post).then((response) => {
-            this.$router.push({name: 'products'});
-          });
-        }
-      }
+export default {
+  data() {
+    return {
+      post: {}
+    };
+  },
+  created() {
+    let uri = `/api/products/edit/${this.$route.params.id}`;
+    this.axios.get(uri).then(response => {
+      this.post = response.data;
+    });
+  },
+  methods: {
+    updatePost() {
+      let uri = `/api/products/update/${this.$route.params.id}`;
+      this.axios.post(uri, this.post).then(response => {
+        this.$router.push({ name: "products" });
+      });
     }
+  }
+};
 </script>
