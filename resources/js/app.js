@@ -16,6 +16,7 @@ import CreateProductComponent from "./components/CreateProductComponent.vue";
 import IndexComponent from "./components/IndexComponent.vue";
 import CartComponent from "./components/CartComponent.vue";
 import EditComponent from "./components/EditComponent.vue";
+import DetailsComponent from "./components/DetailsComponent.vue";
 
 const routes = [
     {
@@ -42,6 +43,11 @@ const routes = [
         name: "cart",
         path: "/cart",
         component: CartComponent
+    },
+    {
+        name: "details",
+        path: "/products/:id",
+        component: DetailsComponent
     }
 ];
 

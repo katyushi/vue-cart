@@ -26,6 +26,11 @@ class PostController extends Controller
     {
         return new PostCollection(Product::all());
     }
+    public function getOne()
+    {
+        $product = Product::find($id);
+        return response()->json($product);
+    }
 
     public function edit($id)
     {

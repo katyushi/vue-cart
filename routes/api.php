@@ -22,3 +22,4 @@ Route::get('/products/edit/{id}', 'PostController@edit');
 Route::post('/products/update/{id}', 'PostController@update');
 Route::delete('/products/delete/{id}', 'PostController@delete');
 Route::get('/products', 'PostController@index');
+Route::get('/products/{id}', 'PostController@getOne');
