@@ -1953,12 +1953,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log("Component mounted.");
@@ -6867,7 +6861,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".fade-enter-active,\r\n.fade-leave-active {\n  transition: opacity 0.5s;\n}\n.fade-enter,\r\n.fade-leave-active {\n  opacity: 0;\n}\r\n", ""]);
+exports.push([module.i, ".fade-enter-active,\n.fade-leave-active {\n  transition: opacity 0.5s;\n}\n.fade-enter,\n.fade-leave-active {\n  opacity: 0;\n}\n", ""]);
 
 // exports
 
@@ -38376,9 +38370,9 @@ var render = function() {
               {
                 staticClass:
                   "no-underline text-grey-dark border-b-2 border-transparent uppercase tracking-wide font-bold text-xs py-3 mr-8",
-                attrs: { to: "/create" }
+                attrs: { to: "/products" }
               },
-              [_vm._v("Add Products")]
+              [_vm._v("Products")]
             ),
             _vm._v(" "),
             _c(
@@ -38386,9 +38380,9 @@ var render = function() {
               {
                 staticClass:
                   "no-underline text-grey-dark border-b-2 border-transparent uppercase tracking-wide font-bold text-xs py-3 mr-8",
-                attrs: { to: "/products" }
+                attrs: { to: "/cart" }
               },
-              [_vm._v("Products")]
+              [_vm._v("Cart")]
             )
           ],
           1
@@ -38431,13 +38425,11 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-8" }, [
-        _c("div", { staticClass: "card card-default" }, [
-          _c("div", { staticClass: "card-header" }, [_vm._v("Cart")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "card-body" }, [_vm._v("I'm Cart.")])
-        ])
-      ])
+      _c("img", {
+        attrs: {
+          src: "https://stayhipp.com/wp-content/uploads/2020/01/helo-fish-.jpg"
+        }
+      })
     ])
   }
 ]
