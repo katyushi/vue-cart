@@ -99,7 +99,7 @@
       <br />
       <div class="form-group">
         <button
-          class="bg-indigo-600 hover:bg-blue-dark text-white font-bold py-3 px-6 rounded"
+          class="cursor-pointer bg-teal-600 hover:bg-teal-500 shadow-xl px-5 py-2 inline-block text-teal-100 hover:text-white rounded"
         >Update</button>
       </div>
     </form>
@@ -115,16 +115,24 @@ export default {
   },
   created() {
     let uri = `/api/products/edit/${this.$route.params.id}`;
-    this.axios.get(uri).then(response => {
+    try {
+      this.axios.get(uri).then(response => {
       this.product = response.data;
     });
+    } catch (error) {
+      console.log(error);
+    }
   },
   methods: {
     updatePost() {
       let uri = `/api/products/update/${this.$route.params.id}`;
-      this.axios.post(uri, this.product).then(response => {
+      try {
+        this.axios.post(uri, this.product).then(response => {
         this.$router.push({ name: "products" });
       });
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 };
