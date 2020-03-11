@@ -1,5 +1,4 @@
-function long_function()
-{
+function long_function() {
     if (longFunction) {
         // This is a long
         // IF statement
@@ -7,7 +6,7 @@ function long_function()
         // not have
         // an ELSE
         // block on it
-        variable = 'hello';
+        variable = 'hello'
 
         if (variable === 'hello') {
             // This is a short
@@ -21,7 +20,7 @@ function long_function()
             // This is a short ELSE
             // statement
         }
-    }//end if
+    } //end if
 
     if (longFunction) {
         // This is a long
@@ -30,7 +29,7 @@ function long_function()
         // not have
         // an ELSE
         // block on it
-        variable = 'hello';
+        variable = 'hello'
 
         if (variable === 'hello') {
             // This is a short
@@ -53,7 +52,7 @@ function long_function()
         // not have
         // an ELSE
         // block on it
-        variable = 'hello';
+        variable = 'hello'
 
         if (variable === 'hello') {
             // This is a short
@@ -69,7 +68,7 @@ function long_function()
         }
     } else {
         // Short ELSE
-    }//end if
+    } //end if
 
     if (longFunction) {
         // This is a long
@@ -78,7 +77,7 @@ function long_function()
         // not have
         // an ELSE
         // block on it
-        variable = 'hello';
+        variable = 'hello'
 
         if (variable === 'hello') {
             // This is a short
@@ -97,7 +96,7 @@ function long_function()
     }
 }
 
-for (variable=1; variable < 20; variable++) {
+for (variable = 1; variable < 20; variable++) {
     // Line 1
     // Line 2
     // Line 3
@@ -118,9 +117,9 @@ for (variable=1; variable < 20; variable++) {
     // Line 18
     // Line 19
     // Line 20
-}//end for
+} //end for
 
-for (variable=1; variable < 20; variable++) {
+for (variable = 1; variable < 20; variable++) {
     // Line 1
     // Line 2
     // Line 3
@@ -130,7 +129,7 @@ for (variable=1; variable < 20; variable++) {
     // Line 7
     // Line 8
     // Line 9
-    for (val =1; val < 20; val++) {
+    for (val = 1; val < 20; val++) {
         // Short for.
     }
     // Line 13
@@ -164,7 +163,7 @@ while (variable < 20) {
     // Line 18
     // Line 19
     // Line 20
-}//end while
+} //end while
 
 while (variable < 20) {
     // Line 1
@@ -196,7 +195,7 @@ if (longFunction) {
     // not have
     // an ELSE
     // block on it
-    variable = 'hello';
+    variable = 'hello'
 
     if (variable === 'hello') {
         // This is a short
@@ -219,7 +218,7 @@ if (longFunction) {
     // not have
     // an ELSE
     // block on it
-    variable = 'hello';
+    variable = 'hello'
 
     if (variable === 'hello') {
         // This is a short
@@ -237,7 +236,7 @@ if (longFunction) {
     // Short ELSE
 } //end if
 
-for (variable=1; variable < 20; variable++) {
+for (variable = 1; variable < 20; variable++) {
     // Line 1
     // Line 2
     // Line 3
@@ -304,7 +303,7 @@ while (variable < 20) {
     // Line 18
     // Line 19
     // Line 20
-}//end for
+} //end for
 
 if (true) {
     // Line 1
@@ -369,7 +368,7 @@ if (true) {
     // Line 18
     // Line 19
     // Line 20
-}//end if
+} //end if
 
 if (something) {
     // Line 1
@@ -402,43 +401,43 @@ if (something) {
 
 switch (something) {
     case '1':
-    // Line 1
-    // Line 2
-    // Line 3
-    // Line 4
-    // Line 5
-    break;
+        // Line 1
+        // Line 2
+        // Line 3
+        // Line 4
+        // Line 5
+        break
     case '2':
-    // Line 1
-    // Line 2
-    // Line 3
-    // Line 4
-    // Line 5
-    break;
+        // Line 1
+        // Line 2
+        // Line 3
+        // Line 4
+        // Line 5
+        break
     case '3':
-    // Line 1
-    // Line 2
-    // Line 3
-    // Line 4
-    // Line 5
-    break;
+        // Line 1
+        // Line 2
+        // Line 3
+        // Line 4
+        // Line 5
+        break
     case '4':
-    // Line 1
-    // Line 2
-    // Line 3
-    // Line 4
-    // Line 5
-    break;
+        // Line 1
+        // Line 2
+        // Line 3
+        // Line 4
+        // Line 5
+        break
     case '5':
-    // Line 1
-    // Line 2
-    // Line 3
-    // Line 4
-    // Line 5
-    break;
+        // Line 1
+        // Line 2
+        // Line 3
+        // Line 4
+        // Line 5
+        break
 }
 
 // Wrong comment
 if (condition) {
-    condition = true;
-}//end foreach
+    condition = true
+} //end foreach
