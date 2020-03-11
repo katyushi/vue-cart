@@ -44,5 +44,8 @@ export default {
             console.log(error)
         }
     },
+    addToCart() {
+        //a
+    },
 }
 </script>

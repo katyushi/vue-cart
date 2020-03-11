@@ -85,6 +85,7 @@
         </table>
     </div>
 </template>
+
 <style>
 html,
 body {

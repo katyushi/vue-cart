@@ -22,10 +22,12 @@ class PostController extends Controller
 
         return response()->json('success');
     }
+
     public function index()
     {
         return new PostCollection(Product::all());
     }
+
     public function getOne()
     {
         $product = Product::find($id);
