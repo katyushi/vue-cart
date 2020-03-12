@@ -23,5 +23,5 @@ Route::post('/products/update/{id}', 'PostController@update');
 Route::delete('/products/delete/{id}', 'PostController@delete');
 Route::get('/products', 'PostController@index');
 Route::get('/products/{id}', 'PostController@getOne');
-//Route::get('/cart','CartControlle@getCart');
-//Route::post('/addtocart', 'PostController@store');
+Route::get('/cart','CartController@getCart');
+Route::post('/addtocart', 'CartController@store');

@@ -18,20 +18,20 @@
             <tbody class="flex-1 sm:flex-none">
                 <tr
                     class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0"
-                    v-for="product in products"
-                    :key="product.id"
+                    v-for="car in cart"
+                    :key="car.id"
                 >
                     <td class="border-grey-light border hover:bg-gray-100 p-3">
-                        {{ product.title }}
+                        {{ car.title }}
                     </td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3">
-                        R${{ product.price }}
+                        R${{ car.price }}
                     </td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3">
                         <input 
                         type="number" 
                         name="custom-input-number" 
-                        v-model="product.qtd"
+                        v-model="car.qtd"
                         ></input>  
                     </td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3">
@@ -90,31 +90,20 @@ input[type='number']::-webkit-inner-spin-button,
 export default {
     data() {
         return {
-            products: [],
+            cart: [],
         }
     },
     created() {
-        this.getPosts()
+        var uri = '/api/cart'
+        try {
+            this.axios.get(uri).then(response => {
+                this.cart = response.data.data
+            })
+            console.log(this.carts)
+        } catch (error) {
+            console.log(error)
+        }
     },
-    methods: {
-        getPosts() {
-            var uri = '/api/products'
-            console.log(uri)
-            try {
-                this.axios.get(uri).then(response => {
-                    this.products = response.data.data
-                })
-            } catch (error) {
-                console.log(error)
-            }
-        },
-        /*cartQtd() {
-            if (product.qtd < cart.qtd) {
-                console.error();
-            } else {
-    
-            }
-        },*/
-    }
+    methods: {}
 }
 </script>

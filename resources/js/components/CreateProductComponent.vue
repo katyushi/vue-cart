@@ -138,7 +138,7 @@ export default {
             let uri = 'api/products/create'
             try {
                 this.axios.post(uri, this.product).then(response => {
-                    this.$router.push({ name: 'product' })
+                    this.$router.push({ name: 'products' })
                 })
                 console.log(this.product)
             } catch (error) {

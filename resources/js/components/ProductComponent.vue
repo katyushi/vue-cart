@@ -52,7 +52,7 @@
                         {{ product.description }}
                     </td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3">
-                        {{ product.price }}
+                        R${{ product.price }}
                     </td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3">
                         {{ product.qtd }}

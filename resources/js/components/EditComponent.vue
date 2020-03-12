@@ -78,15 +78,17 @@
                     <div class="form-group">
                         <label>Product Price:</label>
                         <div class="flex flex-row">
-                            <span
-                                class="flex items-center bg-grey-lighter rounded rounded-r-none px-3 font-bold text-grey-darker"
-                                >R$</span
-                            >
+                            <div class="flex -mr-px">
+                                <span
+                                    class="flex items-center leading-normal bg-grey-lighter rounded rounded-r-none border border-r-0 border-grey-light px-3 whitespace-no-wrap text-grey-dark text-sm"
+                                    >R$</span
+                                >
+                            </div>
                             <input
-                                type="number"
+                                type="text"
                                 v-model="product.price"
-                                name="price"
-                                class="bg-grey-lighter text-grey-darker py-2 font-normal rounded text-grey-darkest border border-grey-lighter rounded-l-none font-bold"
+                                class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 border h-10 border-grey-light rounded rounded-l-none px-3 relative focus:border-blue focus:shadow"
+                                placeholder="9.99"
                             />
                         </div>
                     </div>
