@@ -13,7 +13,8 @@ class CartController extends Controller
         $cart = new Cart([
         'title' => $request->get('title'),
         'price' => $request->get('price'),
-        'qtd' => $request->get('qtd')
+        'qtd' => $request->get('qtd'),
+        'stock' => $request->get('stock')
         ]);
 
         $cart->save();
@@ -24,5 +25,14 @@ class CartController extends Controller
     public function index()
     {
         return new CartCollection(Cart::all());
+    }
+    
+    public function delete($id)
+    {
+        $cart = Cart::find($id);
+
+        $cart->delete();
+
+        return response()->json('successfully deleted');
     }
 }

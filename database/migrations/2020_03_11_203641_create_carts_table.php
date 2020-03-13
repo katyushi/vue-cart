@@ -18,6 +18,7 @@ class CreateCartsTable extends Migration
             $table->string('title');
             $table->double('price');
             $table->integer('qtd');
+            $table->integer('stock');
             $table->timestamps();
         });
     }

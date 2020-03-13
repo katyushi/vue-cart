@@ -2048,27 +2048,75 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      cart: []
+      cart: [],
+      products: []
     };
   },
   created: function created() {
-    var _this = this;
-
-    var uri = '/api/cart';
-
-    try {
-      this.axios.get(uri).then(function (response) {
-        _this.cart = response.data.data;
-      });
-      console.log(this.carts);
-    } catch (error) {
-      console.log(error);
-    }
+    this.getCart();
+    this.getPosts();
   },
-  methods: {}
+  methods: {
+    alerta: function alerta() {
+      alert('ERROR: THE CHOSEN QUANTITY EXCEEDS THE MAXIMUM CAPACITY');
+    },
+    getPosts: function getPosts() {
+      var _this = this;
+
+      var uri = '/api/products';
+      console.log(uri);
+
+      try {
+        this.axios.get(uri).then(function (response) {
+          _this.products = response.data.data;
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    getCart: function getCart() {
+      var _this2 = this;
+
+      var uri = '/api/cart';
+
+      try {
+        this.axios.get(uri).then(function (response) {
+          _this2.cart = response.data.data;
+        });
+        console.log(this.cart);
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    deleteCartIten: function deleteCartIten(id) {
+      var uri = "/api/cart/delete/".concat(id);
+
+      try {
+        this.axios["delete"](uri).then(function (response) {});
+        this.getCart();
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  }
 });
 
 /***/ }),
@@ -2353,10 +2401,12 @@ __webpack_require__.r(__webpack_exports__);
     addToCart: function addToCart() {
       var _this2 = this;
 
-      if (this.cart.qtd < this.product.qtd) {
-        this.cart.title = this.product.title;
-        this.cart.price = this.product.price;
-        var uri = 'api/addtocart';
+      this.cart.title = this.product.title;
+      this.cart.price = this.product.price;
+      this.cart.stock = this.product.qtd;
+
+      if (this.cart.qtd <= this.product.qtd && this.cart.qtd > 0) {
+        var uri = '/api/addtocart';
 
         try {
           this.axios.post(uri, this.cart).then(function (response) {
@@ -2364,7 +2414,7 @@ __webpack_require__.r(__webpack_exports__);
               name: 'cart'
             });
           });
-          console.log(this.product);
+          console.log(this.cart);
         } catch (error) {
           console.log(error);
         }
@@ -39213,10 +39263,62 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _c("td", {
-                    staticClass:
-                      "border-grey-light border hover:bg-gray-100 p-3"
-                  })
+                  _c(
+                    "td",
+                    {
+                      staticClass:
+                        "border-grey-light border hover:bg-gray-100 p-3"
+                    },
+                    [
+                      _vm._v(
+                        "\n                    R$" +
+                          _vm._s((car.qtd * car.price).toFixed(2)) +
+                          "\n                "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "td",
+                    {
+                      staticClass:
+                        "border-grey-light border hover:bg-gray-100 p-3"
+                    },
+                    [
+                      _c("div", [
+                        _c(
+                          "button",
+                          {
+                            staticClass:
+                              "cursor-pointer bg-red-600 hover:bg-red-500 shadow-xl px-5 py-2 inline-block text-orange-100 hover:text-white rounded",
+                            on: {
+                              click: function($event) {
+                                $event.preventDefault()
+                                return _vm.deleteCartIten(car.id)
+                              }
+                            }
+                          },
+                          [
+                            _vm._v(
+                              "\n                            Delete\n                        "
+                            )
+                          ]
+                        )
+                      ]),
+                      _vm._v(" "),
+                      car.qtd > car.stock
+                        ? _c("div", [
+                            _vm._v(
+                              "\n                        " +
+                                _vm._s(_vm.alerta()) +
+                                "\n                        " +
+                                _vm._s((car.qtd = car.qtd - 1)) +
+                                "\n                    "
+                            )
+                          ])
+                        : _vm._e()
+                    ]
+                  )
                 ]
               )
             }),
@@ -39224,7 +39326,65 @@ var render = function() {
           )
         ]
       )
-    ])
+    ]),
+    _vm._v(" "),
+    _c("br"),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass:
+          "cursor-pointer bg-teal-600 hover:bg-teal-500 shadow-xl px-10 py-4 inline-block text-teal-100 hover:text-white rounded"
+      },
+      [
+        _c(
+          "svg",
+          {
+            staticStyle: {
+              "-ms-transform": "rotate(360deg)",
+              "-webkit-transform": "rotate(360deg)",
+              transform: "rotate(360deg)"
+            },
+            attrs: {
+              xmlns: "http://www.w3.org/2000/svg",
+              "xmlns:xlink": "http://www.w3.org/1999/xlink",
+              "aria-hidden": "true",
+              focusable: "false",
+              width: "1em",
+              height: "1em",
+              preserveAspectRatio: "xMidYMid meet",
+              viewBox: "0 0 24 24"
+            }
+          },
+          [
+            _c("path", {
+              attrs: {
+                d:
+                  "M20.756 5.345A1.003 1.003 0 0 0 20 5H6.181l-.195-1.164A1 1 0 0 0 5 3H2.75a1 1 0 1 0 0 2h1.403l1.86 11.164l.045.124l.054.151l.12.179l.095.112l.193.13l.112.065a.97.97 0 0 0 .367.075H18a1 1 0 1 0 0-2H7.847l-.166-1H19a1 1 0 0 0 .99-.858l1-7a1.002 1.002 0 0 0-.234-.797zM18.847 7l-.285 2H15V7h3.847zM14 7v2h-3V7h3zm0 3v2h-3v-2h3zm-4-3v2H7l-.148.03L6.514 7H10zm-2.986 3H10v2H7.347l-.333-2zM15 12v-2h3.418l-.285 2H15z",
+                fill: "#ffffff"
+              }
+            }),
+            _c("circle", {
+              attrs: { cx: "8.5", cy: "19.5", r: "1.5", fill: "#ffffff" }
+            }),
+            _c("circle", {
+              attrs: { cx: "17.5", cy: "19.5", r: "1.5", fill: "#ffffff" }
+            }),
+            _c("rect", {
+              attrs: {
+                x: "0",
+                y: "0",
+                width: "24",
+                height: "24",
+                fill: "rgba(0, 0, 0, 0)"
+              }
+            })
+          ]
+        ),
+        _vm._v(" "),
+        _c("span", [_vm._v(" Buy ")])
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -39247,6 +39407,8 @@ var staticRenderFns = [
           _c("th", { staticClass: "p-3 text-left" }, [
             _vm._v("Product Quantity")
           ]),
+          _vm._v(" "),
+          _c("th", { staticClass: "p-3 text-left" }, [_vm._v("Subtotal")]),
           _vm._v(" "),
           _c("th", { staticClass: "p-3 text-left" }, [_vm._v("Actions")])
         ]
@@ -39739,15 +39901,7 @@ var render = function() {
           )
         ])
       ]
-    ),
-    _vm._v(" "),
-    _c("div", [
-      _vm._m(1),
-      _vm._v(" "),
-      _c("br"),
-      _vm._v(" "),
-      _c("label", [_vm._v(_vm._s(_vm.product.description))])
-    ])
+    )
   ])
 }
 var staticRenderFns = [
@@ -39762,12 +39916,6 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("br")
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h1", [_c("b", [_vm._v("Description:")])])
   }
 ]
 render._withStripped = true

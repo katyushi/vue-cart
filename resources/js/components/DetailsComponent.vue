@@ -54,11 +54,11 @@
                 </button>
             </div>
         </form>
-        <div>
+        <!--<div>
             <h1><b>Description:</b></h1>
             <br/>
             <label>{{product.description}}</label>
-        </div>
+        </div>-->
     </div>
 </template>
 <style>
@@ -100,15 +100,16 @@ export default {
     },
     methods: {
         addToCart() {
-            if (this.cart.qtd < this.product.qtd) {
-                this.cart.title = this.product.title;
-                this.cart.price = this.product.price;
-                let uri = 'api/addtocart'
+            this.cart.title = this.product.title;
+            this.cart.price = this.product.price;
+            this.cart.stock = this.product.qtd;
+            if (this.cart.qtd <= this.product.qtd && this.cart.qtd > 0) {
+                let uri = '/api/addtocart'
                 try {
                     this.axios.post(uri, this.cart).then(response => {
                         this.$router.push({ name: 'cart' })
-                    })
-                    console.log(this.product)
+                       })
+                    console.log(this.cart)
                 } catch (error) {
                     console.log(error)
                 }
