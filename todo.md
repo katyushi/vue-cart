@@ -1,20 +1,26 @@
 ### todo:
-- [x] Cadastro de produtos
+- [x] Cadastro de produtos:
     - [x] Título
     - [x] Foto
     - [x] Descrição
     - [x] Preço
     - [x] Quantidade em estoque
     <br>
-- [x]  Carrinho de compras
+- [x]  Carrinho de compras:
     - [x]  Adicionar produto
     - [x] Atualizar quantidade de um item no carrinho
-    - [ ]  Excluir um item no carrinho
+    - [x]  Excluir um item no carrinho
+- [ ] User Stuff:
+    - [ ] create user
+    - [ ] user login
+- [ ] admin dashboard
+    - [ ] move product admin
+    - [ ] auth required to access things in this session
     <br>
 ### rules:
 
 
-- [ ] Validar se a quantidade de um item do carrinho está disponível no estoque. Caso não, proibir a atualização e mostrar um alerta de erro.
+- [x] Validar se a quantidade de um item do carrinho está disponível no estoque. Caso não, proibir a atualização e mostrar um alerta de erro.
 
 
 - [ ] O cadastro de produtos só poderá ser realizado através de um usuário autenticado.

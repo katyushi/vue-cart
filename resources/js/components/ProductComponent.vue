@@ -25,6 +25,8 @@
                     <th class="p-3 text-left">Item Description</th>
                     <th class="p-3 text-left">Item Price</th>
                     <th class="p-3 text-left">Item Quantity</th>
+                    <th class="p-3 text-left">Created At</th>
+                    <th class="p-3 text-left">Updated At</th>
                     <th class="p-3 text-left">Actions</th>
                     <th class="p-3 text-left">Other Actions</th>
                 </tr>
@@ -56,6 +58,12 @@
                     </td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3">
                         {{ product.qtd }}
+                    </td>
+                    <td class="border-grey-light border hover:bg-gray-100 p-3">
+                        {{ product.created_at }}
+                    </td>
+                    <td class="border-grey-light border hover:bg-gray-100 p-3">
+                        {{ product.updated_at }}
                     </td>
                     <td class="border-grey-light border hover:bg-gray-100 p-3">
                         <router-link

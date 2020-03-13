@@ -2845,6 +2845,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -40567,6 +40575,36 @@ var render = function() {
                       "border-grey-light border hover:bg-gray-100 p-3"
                   },
                   [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(product.created_at) +
+                        "\n                "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  {
+                    staticClass:
+                      "border-grey-light border hover:bg-gray-100 p-3"
+                  },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(product.updated_at) +
+                        "\n                "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  {
+                    staticClass:
+                      "border-grey-light border hover:bg-gray-100 p-3"
+                  },
+                  [
                     _c(
                       "router-link",
                       {
@@ -40660,6 +40698,10 @@ var staticRenderFns = [
           _c("th", { staticClass: "p-3 text-left" }, [_vm._v("Item Price")]),
           _vm._v(" "),
           _c("th", { staticClass: "p-3 text-left" }, [_vm._v("Item Quantity")]),
+          _vm._v(" "),
+          _c("th", { staticClass: "p-3 text-left" }, [_vm._v("Created At")]),
+          _vm._v(" "),
+          _c("th", { staticClass: "p-3 text-left" }, [_vm._v("Updated At")]),
           _vm._v(" "),
           _c("th", { staticClass: "p-3 text-left" }, [_vm._v("Actions")]),
           _vm._v(" "),
