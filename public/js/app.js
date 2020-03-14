@@ -2063,6 +2063,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2076,12 +2111,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     alerta: function alerta() {
-      alert('ERROR: THE CHOSEN QUANTITY EXCEEDS THE MAXIMUM CAPACITY');
+      alert("ERROR: THE CHOSEN QUANTITY EXCEEDS THE MAXIMUM CAPACITY");
     },
     getPosts: function getPosts() {
       var _this = this;
 
-      var uri = '/api/products';
+      var uri = "/api/products";
       console.log(uri);
 
       try {
@@ -2095,7 +2130,7 @@ __webpack_require__.r(__webpack_exports__);
     getCart: function getCart() {
       var _this2 = this;
 
-      var uri = '/api/cart';
+      var uri = "/api/cart";
 
       try {
         this.axios.get(uri).then(function (response) {
@@ -2268,12 +2303,12 @@ __webpack_require__.r(__webpack_exports__);
     addPost: function addPost() {
       var _this = this;
 
-      var uri = 'api/products/create';
+      var uri = "api/products/create";
 
       try {
         this.axios.post(uri, this.product).then(function (response) {
           _this.$router.push({
-            name: 'products'
+            name: "products"
           });
         });
         console.log(this.product);
@@ -2295,6 +2330,24 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -2406,12 +2459,12 @@ __webpack_require__.r(__webpack_exports__);
       this.cart.stock = this.product.qtd;
 
       if (this.cart.qtd <= this.product.qtd && this.cart.qtd > 0) {
-        var uri = '/api/addtocart';
+        var uri = "/api/addtocart";
 
         try {
           this.axios.post(uri, this.cart).then(function (response) {
             _this2.$router.push({
-              name: 'cart'
+              name: "cart"
             });
           });
           console.log(this.cart);
@@ -2419,7 +2472,7 @@ __webpack_require__.r(__webpack_exports__);
           console.log(error);
         }
       } else {
-        alert('ERROR UNAVALIABLE QUANTITY');
+        alert("ERROR UNAVALIABLE QUANTITY");
       }
     }
   }
@@ -2592,7 +2645,7 @@ __webpack_require__.r(__webpack_exports__);
       try {
         this.axios.post(uri, this.product).then(function (response) {
           _this2.$router.push({
-            name: 'products'
+            name: "products"
           });
         });
       } catch (error) {
@@ -2694,6 +2747,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2707,7 +2766,7 @@ __webpack_require__.r(__webpack_exports__);
     getPosts: function getPosts() {
       var _this = this;
 
-      var uri = '/api/products';
+      var uri = "/api/products";
       console.log(uri);
 
       try {
@@ -2866,7 +2925,7 @@ __webpack_require__.r(__webpack_exports__);
     getPosts: function getPosts() {
       var _this = this;
 
-      var uri = '/api/products';
+      var uri = "/api/products";
       console.log(uri);
 
       try {
@@ -7454,7 +7513,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "html,\nbody {\n  height: 100%;\n}\n@media (min-width: 640px) {\ntable {\n    display: inline-table !important;\n}\nthead tr:not(:first-child) {\n    display: none;\n}\n}\ntd:not(:last-child) {\n  border-bottom: 0;\n}\nth:not(:last-child) {\n  border-bottom: 2px solid rgba(0, 0, 0, 0.1);\n}\ninput[type='number']::-webkit-inner-spin-button,\n  input[type='number']::-webkit-outer-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n.custom-number-input input:focus {\n  outline: none !important;\n}\n.custom-number-input button:focus {\n  outline: none !important;\n}\n", ""]);
+exports.push([module.i, "html,\nbody {\n  height: 100%;\n}\n@media (min-width: 640px) {\ntable {\n    display: inline-table !important;\n}\nthead tr:not(:first-child) {\n    display: none;\n}\n}\ntd:not(:last-child) {\n  border-bottom: 0;\n}\nth:not(:last-child) {\n  border-bottom: 2px solid rgba(0, 0, 0, 0.1);\n}\ninput[type=\"number\"]::-webkit-inner-spin-button,\ninput[type=\"number\"]::-webkit-outer-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n.custom-number-input input:focus {\n  outline: none !important;\n}\n.custom-number-input button:focus {\n  outline: none !important;\n}\n", ""]);
 
 // exports
 
@@ -7473,7 +7532,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "* {\n  box-sizing: border-box;\n}\n.funct{\n  width: 25%;\n  float: left;\n}\n.image{\n  width: 75%;\n  float: left;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  width: 50%;\n}\n\n", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n}\n.funct {\n  width: 25%;\n  float: left;\n}\n.image {\n  width: 75%;\n  float: left;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  width: 50%;\n}\n", ""]);
 
 // exports
 
@@ -39219,9 +39278,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n                    " +
+                        "\n                        " +
                           _vm._s(car.title) +
-                          "\n                "
+                          "\n                    "
                       )
                     ]
                   ),
@@ -39234,9 +39293,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n                    R$" +
+                        "\n                        R$" +
                           _vm._s(car.price) +
-                          "\n                "
+                          "\n                    "
                       )
                     ]
                   ),
@@ -39279,9 +39338,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n                    R$" +
+                        "\n                        R$" +
                           _vm._s((car.qtd * car.price).toFixed(2)) +
-                          "\n                "
+                          "\n                    "
                       )
                     ]
                   ),
@@ -39308,7 +39367,7 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                            Delete\n                        "
+                              "\n                                Delete\n                            "
                             )
                           ]
                         )
@@ -39317,11 +39376,11 @@ var render = function() {
                       car.qtd > car.stock
                         ? _c("div", [
                             _vm._v(
-                              "\n                        " +
+                              "\n                            " +
                                 _vm._s(_vm.alerta()) +
-                                "\n                        " +
+                                "\n                            " +
                                 _vm._s((car.qtd = car.qtd - 1)) +
-                                "\n                    "
+                                "\n                        "
                             )
                           ])
                         : _vm._e()
@@ -39372,12 +39431,15 @@ var render = function() {
                 fill: "#ffffff"
               }
             }),
+            _vm._v(" "),
             _c("circle", {
               attrs: { cx: "8.5", cy: "19.5", r: "1.5", fill: "#ffffff" }
             }),
+            _vm._v(" "),
             _c("circle", {
               attrs: { cx: "17.5", cy: "19.5", r: "1.5", fill: "#ffffff" }
             }),
+            _vm._v(" "),
             _c("rect", {
               attrs: {
                 x: "0",
@@ -40307,9 +40369,9 @@ var render = function() {
                     },
                     [
                       _vm._v(
-                        "\n                    " +
+                        "\n                        " +
                           _vm._s(product.title) +
-                          "\n                "
+                          "\n                    "
                       )
                     ]
                   ),
@@ -56512,8 +56574,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\BUBB\Documents\dev\vue-cart\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\BUBB\Documents\dev\vue-cart\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\hugol\OneDrive\Documents\dev\vue-cart\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\hugol\OneDrive\Documents\dev\vue-cart\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

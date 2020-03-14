@@ -130,30 +130,30 @@
 export default {
     data() {
         return {
-            product: {},
-        }
+            product: {}
+        };
     },
     created() {
-        let uri = `/api/products/edit/${this.$route.params.id}`
+        let uri = `/api/products/edit/${this.$route.params.id}`;
         try {
             this.axios.get(uri).then(response => {
-                this.product = response.data
-            })
+                this.product = response.data;
+            });
         } catch (error) {
-            console.log(error)
+            console.log(error);
         }
     },
     methods: {
         updatePost() {
-            let uri = `/api/products/update/${this.$route.params.id}`
+            let uri = `/api/products/update/${this.$route.params.id}`;
             try {
                 this.axios.post(uri, this.product).then(response => {
-                    this.$router.push({ name: 'products' })
-                })
+                    this.$router.push({ name: "products" });
+                });
             } catch (error) {
-                console.log(error)
+                console.log(error);
             }
-        },
-    },
-}
+        }
+    }
+};
 </script>

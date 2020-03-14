@@ -130,21 +130,21 @@
 export default {
     data() {
         return {
-            product: {},
-        }
+            product: {}
+        };
     },
     methods: {
         addPost() {
-            let uri = 'api/products/create'
+            let uri = "api/products/create";
             try {
                 this.axios.post(uri, this.product).then(response => {
-                    this.$router.push({ name: 'products' })
-                })
-                console.log(this.product)
+                    this.$router.push({ name: "products" });
+                });
+                console.log(this.product);
             } catch (error) {
-                console.log(error)
+                console.log(error);
             }
-        },
-    },
-}
+        }
+    }
+};
 </script>

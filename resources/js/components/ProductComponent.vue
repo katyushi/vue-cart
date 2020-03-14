@@ -82,7 +82,7 @@
                         <router-link
                             :to="{
                                 name: 'details',
-                                params: { id: product.id },
+                                params: { id: product.id }
                             }"
                             class="cursor-pointer bg-teal-600 hover:bg-teal-500 shadow-xl px-5 py-2 inline-block text-teal-100 hover:text-white rounded"
                             >View Product</router-link
@@ -123,33 +123,33 @@ th:not(:last-child) {
 export default {
     data() {
         return {
-            products: [],
-        }
+            products: []
+        };
     },
     created() {
-        this.getPosts()
+        this.getPosts();
     },
     methods: {
         getPosts() {
-            var uri = '/api/products'
-            console.log(uri)
+            var uri = "/api/products";
+            console.log(uri);
             try {
                 this.axios.get(uri).then(response => {
-                    this.products = response.data.data
-                })
+                    this.products = response.data.data;
+                });
             } catch (error) {
-                console.log(error)
+                console.log(error);
             }
         },
         deletePost(id) {
-            let uri = `/api/products/delete/${id}`
+            let uri = `/api/products/delete/${id}`;
             try {
-                this.axios.delete(uri).then(response => {})
-                this.getPosts()
+                this.axios.delete(uri).then(response => {});
+                this.getPosts();
             } catch (error) {
-                console.log(error)
+                console.log(error);
             }
-        },
-    },
-}
+        }
+    }
+};
 </script>
