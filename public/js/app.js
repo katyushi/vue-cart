@@ -7494,7 +7494,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, ".fade-enter-active,\n.fade-leave-active {\n  transition: opacity 0.5s;\n}\n.fade-enter,\n.fade-leave-active {\n  opacity: 0;\n}\n", ""]);
+exports.push([module.i, ".fade-enter-active,\r\n.fade-leave-active {\n  transition: opacity 0.5s;\n}\n.fade-enter,\r\n.fade-leave-active {\n  opacity: 0;\n}\r\n", ""]);
 
 // exports
 
@@ -7513,7 +7513,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "html,\nbody {\n  height: 100%;\n}\n@media (min-width: 640px) {\ntable {\n    display: inline-table !important;\n}\nthead tr:not(:first-child) {\n    display: none;\n}\n}\ntd:not(:last-child) {\n  border-bottom: 0;\n}\nth:not(:last-child) {\n  border-bottom: 2px solid rgba(0, 0, 0, 0.1);\n}\ninput[type=\"number\"]::-webkit-inner-spin-button,\ninput[type=\"number\"]::-webkit-outer-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n.custom-number-input input:focus {\n  outline: none !important;\n}\n.custom-number-input button:focus {\n  outline: none !important;\n}\n", ""]);
+exports.push([module.i, "html,\r\nbody {\n  height: 100%;\n}\n@media (min-width: 640px) {\ntable {\n    display: inline-table !important;\n}\nthead tr:not(:first-child) {\n    display: none;\n}\n}\ntd:not(:last-child) {\n  border-bottom: 0;\n}\nth:not(:last-child) {\n  border-bottom: 2px solid rgba(0, 0, 0, 0.1);\n}\ninput[type=\"number\"]::-webkit-inner-spin-button,\r\ninput[type=\"number\"]::-webkit-outer-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n.custom-number-input input:focus {\n  outline: none !important;\n}\n.custom-number-input button:focus {\n  outline: none !important;\n}\r\n", ""]);
 
 // exports
 
@@ -7532,7 +7532,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "* {\n  box-sizing: border-box;\n}\n.funct {\n  width: 25%;\n  float: left;\n}\n.image {\n  width: 75%;\n  float: left;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  width: 50%;\n}\n", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box;\n}\n.funct {\n  width: 25%;\n  float: left;\n}\n.image {\n  width: 75%;\n  float: left;\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n  width: 50%;\n}\r\n", ""]);
 
 // exports
 
@@ -7551,7 +7551,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "html,\nbody {\n  height: 100%;\n}\n@media (min-width: 640px) {\ntable {\n    display: inline-table !important;\n}\nthead tr:not(:first-child) {\n    display: none;\n}\n}\ntd:not(:last-child) {\n  border-bottom: 0;\n}\nth:not(:last-child) {\n  border-bottom: 2px solid rgba(0, 0, 0, 0.1);\n}\n", ""]);
+exports.push([module.i, "html,\r\nbody {\n  height: 100%;\n}\n@media (min-width: 640px) {\ntable {\n    display: inline-table !important;\n}\nthead tr:not(:first-child) {\n    display: none;\n}\n}\ntd:not(:last-child) {\n  border-bottom: 0;\n}\nth:not(:last-child) {\n  border-bottom: 2px solid rgba(0, 0, 0, 0.1);\n}\r\n", ""]);
 
 // exports
 
@@ -7570,7 +7570,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "html,\nbody {\n  height: 100%;\n}\n@media (min-width: 640px) {\ntable {\n    display: inline-table !important;\n}\nthead tr:not(:first-child) {\n    display: none;\n}\n}\ntd:not(:last-child) {\n  border-bottom: 0;\n}\nth:not(:last-child) {\n  border-bottom: 2px solid rgba(0, 0, 0, 0.1);\n}\n", ""]);
+exports.push([module.i, "html,\r\nbody {\n  height: 100%;\n}\n@media (min-width: 640px) {\ntable {\n    display: inline-table !important;\n}\nthead tr:not(:first-child) {\n    display: none;\n}\n}\ntd:not(:last-child) {\n  border-bottom: 0;\n}\nth:not(:last-child) {\n  border-bottom: 2px solid rgba(0, 0, 0, 0.1);\n}\r\n", ""]);
 
 // exports
 
@@ -56574,8 +56574,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\hugol\OneDrive\Documents\dev\vue-cart\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\hugol\OneDrive\Documents\dev\vue-cart\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\BUBB\Documents\dev\vue-cart\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\BUBB\Documents\dev\vue-cart\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

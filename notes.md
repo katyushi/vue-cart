@@ -30,4 +30,5 @@
 
 [https://www.youtube.com/watch?v=639Pe0PpVLQ](heroku-deploy-laravel)
 
-[]()
+https://pusher.com/tutorials?q=Build%20CMS%20Laravel%20Vue
+[https://pusher.com/tutorials/cms-laravel-vue-part-1]()
